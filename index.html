@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Wallet App</title>
+		<title>Monthly Expense Tracker</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -20,10 +20,17 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<!-- notfy  -->
+		<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+	  />
+	  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+	  <!-- //  -->
 	</head>
 	<body>
 		<header class="text-warning text-center display-5 my-4">
-			Aylık Gider Uygulamasi
+			Monthly Expense Implementation
 		</header>
 
 		<main class="container" style="max-width: 800px">
@@ -32,11 +39,12 @@
 					type="number"
 					class="form-control"
 					min="0"
+					id="gelir"
 					autofocus
 					required
-					placeholder="Gelirinizi giriniz."
+					placeholder="Enter your income."
 				/>
-				<button type="submit" class="btn btn-warning">Ekle</button>
+				<button type="submit" class="btn btn-warning" id="addBtn">Add</button>
 			</form>
 			<form class="row g-3 p-3 mt-4 border rounded-4 m-0">
 				<h1 class="text-center">Harcama Formu</h1>
@@ -63,7 +71,7 @@
 						required
 					/>
 				</div>
-				<div class="mb-3 col-md-12">
+				<div class="col-md-12">
 					<label for="harcamaMiktar" class="form-label"
 						>Harcanan Miktar</label
 					>
@@ -76,8 +84,8 @@
 					/>
 				</div>
 				<div class="col-12 text-center">
-					<button type="submit" class="btn btn-warning">
-						Kaydet
+					<button type="submit" class="btn btn-warning" id="saveBtn">
+						Save
 					</button>
 				</div>
 			</form>
@@ -93,33 +101,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td><i class="fa-solid fa-trash-can"></i></td>
-					</tr>
-					<tr>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-						<td><i class="fa-solid fa-trash-can"></i></td>
-					</tr>
-					<tr>
-						<td>Larry the Bird</td>
-						<td>@twitter</td>
-						<td>@twitter</td>
-						<td><i class="fa-solid fa-trash-can"></i></td>
-					</tr>
-					<tr>
-						<td>Larry the Bird</td>
-						<td>@twitter</td>
-						<td>@twitter</td>
-						<td><i class="fa-solid fa-trash-can"></i></td>
-					</tr>
 				</tbody>
 			</table>
-			<table class="table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto"
+			<table
+				class="table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto"
 			>
 				<tbody class="text-end">
 					<tr>
@@ -136,6 +121,11 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="col-12 text-center">
+				<button type="submit" class="btn btn-warning">
+					Bilgileri Temizle
+				</button>
+			</div>
 		</main>
 
 		<script
@@ -146,3 +136,4 @@
 		<script src="./script.js"></script>
 	</body>
 </html>
+<!-- <i class="fa-solid fa-trash-can"></i>  -->
