@@ -46,9 +46,7 @@ const bubling = () => {
       `;
         gider.push(Number(harcamaMiktar.value))
         totalGider = gider.reduce((acc,gider)=>acc+gider,0)
-        console.log(totalGider)
 				gideriniz.textContent = totalGider;
-				console.log(geliriniz, gideriniz);
 				kalan.textContent = totalGelir - gideriniz.textContent;
 				tb1.appendChild(tr);
 				harcama.value = "";
@@ -70,7 +68,9 @@ const bubling = () => {
       let deletedAmount = tRow.querySelector(".amount").textContent
       totalGider -= deletedAmount
 			gideriniz.textContent = totalGider;
+      kalan.textContent = geliriniz.textContent - gideriniz.textContent
       console.log("total gider:",totalGider)
+
       tRow.remove();
 		}
 	});
