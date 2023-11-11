@@ -24,7 +24,6 @@ window.addEventListener("load", () => {
 	tarihInput.valueAsDate = new Date();
 	getData();
 	updateRemainingValues(); 
-	console.log(gideriniz.textContent)
 });
 
 
@@ -117,13 +116,8 @@ const bubling = () => {
 		} else if (e.target.id === "clearAll") {
 			gelir = [];
 			gider = [];
-			updateRemainingValues()
-			// geliriniz.textContent = gelir;
-			// gideriniz.textContent = gider;
-			// kalan.textContent = "";
-			
+			updateRemainingValues()	
 			tb1.innerHTML = ""
-			// tablo 1 silinmiyor onu ayarla
 			localStorage.setItem("tb1",tb1.innerHTML)
 			localStorage.setItem("gelir",JSON.stringify(gelir))
 			localStorage.setItem("gider",JSON.stringify(gider))
@@ -171,9 +165,6 @@ const sweetSwal = () => {
 };
 //?
 
-// localStorage.setItem("tb1", tb1.innerHTML);
-// localStorage.setItem("tb2", tb2.innerHTML);
-
 function getData() {
 	tb1.innerHTML = localStorage.getItem("tb1");
 	let tb2Data = localStorage.getItem("tb2");
@@ -198,7 +189,3 @@ function getData() {
 income.addEventListener("keyup", () => {
 	income.value = income.value.replace(/e/gi, "");
 });
-
-
-
-  
