@@ -16,8 +16,6 @@ const tb2 = document.querySelector(".tb2 tbody");
 
 const notyf = new Notyf();
 
-
-
 let gelir = [];
 let totalGelir = [];
 let gider = [];
@@ -28,30 +26,33 @@ window.addEventListener("load", () => {
 	tarihInput.valueAsDate = new Date();
 	getData();
 	updateRemainingValues();
-	window.dispatchEvent(new Event("resize"));	
+	window.dispatchEvent(new Event("resize"));
 });
 
 //
 window.addEventListener("resize", function () {
 	var screenWidth = window.innerWidth;
 	var payLabel = document.getElementById("payLabel");
-	var table2 = document.getElementById("tbl2")
-	var tb2Body = this.document.querySelector(".tb2 tbody")
+	var table2 = document.getElementById("tbl2");
+	var tb2Body = document.querySelector(".tb2 tbody");
 	if (payLabel) {
-	   if (screenWidth <= 400) {
-		  payLabel.textContent = "Last Payment";
-		table2.setAttribute("class","table table-bordered table-hover table-striped mt-4 text-center  ms-auto tb2")
-		tb2Body.setAttribute("class","text-start")
-	   } else {
-		  payLabel.textContent = "Last Payment Date";
-		  table2.setAttribute("class","table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto tb2")
-		  tb2Body.setAttribute("class","text-end")
-	   }
+		if (screenWidth <= 400) {
+			payLabel.textContent = "Last Payment";
+			table2.setAttribute(
+				"class",
+				"table table-bordered table-hover table-striped mt-4 text-center  ms-auto tb2"
+			);
+			tb2Body.setAttribute("class", "text-start");
+		} else {
+			payLabel.textContent = "Last Payment Date";
+			table2.setAttribute(
+				"class",
+				"table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto tb2"
+			);
+			tb2Body.setAttribute("class", "text-end");
+		}
 	}
- });
-
-
-
+});
 
 const updateRemainingValues = () => {
 	totalGelir = gelir.reduce((sum, gelir) => sum + gelir, 0);
@@ -79,25 +80,24 @@ const bubling = () => {
 				harcamaMiktar.value = "";
 			} else if (!harcamaMiktar.value) {
 				notyf.error({
-					message: 'Please fill in the Expenditure Amount field',
+					message: "Please fill in the Expenditure Amount field",
 					duration: 2000,
 					icon: false,
 					position: {
 						x: "center",
 						y: "top",
 					},
-				  })
+				});
 			} else if (!harcama.value) {
 				notyf.error({
-					message: 'Please fill in the Expenditure Field',
+					message: "Please fill in the Expenditure Field",
 					duration: 2000,
 					icon: false,
 					position: {
 						x: "center",
 						y: "top",
 					},
-				  })
-			
+				});
 			} else {
 				e.preventDefault();
 				harcama.value = harcama.value.replace(/e/gi, "");
@@ -230,6 +230,6 @@ income.addEventListener("keyup", () => {
 	income.value = income.value.replace(/e/gi, "");
 });
 
-harcamaMiktar.addEventListener("keyup",()=>{
+harcamaMiktar.addEventListener("keyup", () => {
 	harcamaMiktar.value = harcamaMiktar.value.replace(/e/gi, "");
-})
+});
