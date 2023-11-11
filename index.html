@@ -48,10 +48,10 @@
 				<button type="submit" class="btn btn-warning" id="addBtn">Add</button>
 			</form>
 			<form class="row g-3 p-3 mt-4 border rounded-4 m-0">
-				<h1 class="text-center">Harcama Formu</h1>
+				<h1 class="text-center">Expense Form</h1>
 				<div class="mb-3 col-md-6">
 					<label for="harcama" class="form-label"
-						>Harcama Alani</label
+						>Expense Field</label
 					>
 					<input
 						type="text"
@@ -63,7 +63,7 @@
 				</div>
 				<div class="mb-3 col-md-6">
 					<label for="tarihInput" class="form-label"
-						>Tarih</label
+						>Last Payment Date</label
 					>
 					<input
 						type="date"
@@ -74,7 +74,7 @@
 				</div>
 				<div class="col-md-12">
 					<label for="harcamaMiktar" class="form-label"
-						>Harcanan Miktar</label
+						>Spent Amount</label
 					>
 					<input
 						type="number"
@@ -95,10 +95,10 @@
 			>
 				<thead>
 					<tr>
-						<th scope="col" class="w-50">Harcama Alanı</th>
-						<th scope="col">Miktar</th>
-						<th scope="col" class="w-25">Tarih</th>
-						<th scope="col">İşlem</th>
+						<th scope="col" class="w-50">Expense Field</th>
+						<th scope="col">Amount</th>
+						<th scope="col" class="w-25">Last Payment Date</th>
+						<th scope="col">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -110,22 +110,22 @@
 			>
 				<tbody class="text-end">
 					<tr>
-						<th>Geliriniz:</th>
+						<th>Your Income:</th>
 						<td id="geliriniz"></td>
 					</tr>
 					<tr>
-						<th>Gideriniz:</th>
+						<th>Your Expenses:</th>
 						<td id="gideriniz"></td>
 					</tr>
 					<tr>
-						<th>Kalan:</th>
+						<th>Remaining:</th>
 						<td id="kalan"></td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="col-12 text-center">
 				<button type="submit" class="btn btn-warning" id="clearAll">
-					Bilgileri Temizle
+					Clear Information
 				</button>
 			</div>
 		</main>

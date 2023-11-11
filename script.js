@@ -46,6 +46,7 @@ const bubling = () => {
 		// variables
 
 		let tr = document.createElement("tr");
+		tr.setAttribute("id","trow")
 		//
 		if (e.target.id === "saveBtn") {
 			if (!geliriniz.textContent || geliriniz.textContent == 0) {
@@ -120,6 +121,9 @@ const bubling = () => {
 			// geliriniz.textContent = gelir;
 			// gideriniz.textContent = gider;
 			// kalan.textContent = "";
+			
+			tb1.innerHTML = ""
+			// tablo 1 silinmiyor onu ayarla
 			localStorage.setItem("tb1",tb1.innerHTML)
 			localStorage.setItem("gelir",JSON.stringify(gelir))
 			localStorage.setItem("gider",JSON.stringify(gider))
