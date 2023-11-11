@@ -14,6 +14,10 @@ const clearAll = document.getElementById("clearAll");
 const tb1 = document.querySelector(".tb1 tbody");
 const tb2 = document.querySelector(".tb2 tbody");
 
+const notyf = new Notyf();
+
+
+
 let gelir = [];
 let totalGelir = [];
 let gider = [];
@@ -74,9 +78,26 @@ const bubling = () => {
 				harcama.value = "";
 				harcamaMiktar.value = "";
 			} else if (!harcamaMiktar.value) {
-				alert("Please fill in the Expenditure Amount field");
+				notyf.error({
+					message: 'Please fill in the Expenditure Amount field',
+					duration: 2000,
+					icon: false,
+					position: {
+						x: "center",
+						y: "top",
+					},
+				  })
 			} else if (!harcama.value) {
-				alert("Please fill in the Expenditure Field");
+				notyf.error({
+					message: 'Please fill in the Expenditure Field',
+					duration: 2000,
+					icon: false,
+					position: {
+						x: "center",
+						y: "top",
+					},
+				  })
+			
 			} else {
 				e.preventDefault();
 				harcama.value = harcama.value.replace(/e/gi, "");
@@ -88,9 +109,6 @@ const bubling = () => {
       `;
 				gider.push(Number(harcamaMiktar.value));
 				updateRemainingValues();
-				// totalGider = gider.reduce((acc, gider) => acc + gider, 0);
-				// gideriniz.textContent = totalGider;
-				// kalan.textContent = totalGelir - gideriniz.textContent;
 				tb1.appendChild(tr);
 				harcama.value = "";
 				harcamaMiktar.value = "";
@@ -212,3 +230,6 @@ income.addEventListener("keyup", () => {
 	income.value = income.value.replace(/e/gi, "");
 });
 
+harcamaMiktar.addEventListener("keyup",()=>{
+	harcamaMiktar.value = harcamaMiktar.value.replace(/e/gi, "");
+})
