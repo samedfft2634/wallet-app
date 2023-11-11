@@ -14,7 +14,7 @@ const clearAll = document.getElementById("clearAll");
 const tb1 = document.querySelector(".tb1 tbody");
 const tb2 = document.querySelector(".tb2 tbody");
 
-const notyf = new Notyf();
+
 
 let gelir = [];
 let totalGelir = [];
@@ -79,6 +79,7 @@ const bubling = () => {
 				harcama.value = "";
 				harcamaMiktar.value = "";
 			} else if (!harcamaMiktar.value) {
+				const notyf = new Notyf();
 				notyf.error({
 					message: "Please fill in the Expenditure Amount field",
 					duration: 2000,
@@ -89,6 +90,7 @@ const bubling = () => {
 					},
 				});
 			} else if (!harcama.value) {
+				const notyf = new Notyf();
 				notyf.error({
 					message: "Please fill in the Expenditure Field",
 					duration: 2000,
