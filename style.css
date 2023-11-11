@@ -1,19 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-main{
-    max-width: 800px;
+body {
+	background: url(income.png.jpeg) no-repeat;
+	background-position: top;
+	background-size: cover;
+	min-height: 100vh;
+    background-color: #19A69B;
+    
+}
+
+main {
+	max-width: 800px;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    max-width: 800px;
-    margin: 50px auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	max-width: 800px;
+	margin: 50px auto;
 }
 
 /* .form-control{
@@ -30,8 +39,22 @@ header {
     text-align: center;
 } */
 
-.fa-trash-can{
-    color: red;
-    font-size: 1.5rem;
-    cursor: pointer;
+.fa-trash-can {
+	color: red;
+	font-size: 1.5rem;
+	cursor: pointer;
 }
+
+body::-webkit-scrollbar {
+	width: 1.3rem; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+	background: #1BA79C; /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+	background-color:#19A69B; /* color of the scroll thumb */
+	border-radius: 20px; /* roundness of the scroll thumb */
+	border: 3px solid orange; /* creates padding around scroll thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {background: #C83430;}

@@ -2,7 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
 		<title>Monthly Expense Tracker</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -22,11 +25,11 @@
 		/>
 		<!-- notfy  -->
 		<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
-	  />
-	  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-	  	<!-- swal -->
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+		<!-- swal -->
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	</head>
 	<body>
@@ -45,9 +48,11 @@
 					required
 					placeholder="Enter your income."
 				/>
-				<button type="submit" class="btn btn-warning" id="addBtn">Add</button>
+				<button type="submit" class="btn btn-warning" id="addBtn">
+					Add
+				</button>
 			</form>
-			<form class="row g-3 p-3 mt-4 border rounded-4 m-0">
+			<form class="row g-3 p-3 mt-4 border rounded-4 m-0 bg-light">
 				<h1 class="text-center">Expense Form</h1>
 				<div class="mb-3 col-md-6">
 					<label for="harcama" class="form-label"
@@ -55,14 +60,14 @@
 					>
 					<input
 						type="text"
-						placeholder="Manav, Bakkal, Fatura"
+						placeholder="Grocery, Convenience Store, Bill"
 						class="form-control"
 						id="harcama"
 						required
 					/>
 				</div>
 				<div class="mb-3 col-md-6">
-					<label for="tarihInput" class="form-label"
+					<label for="tarihInput" class="form-label" 
 						>Last Payment Date</label
 					>
 					<input
@@ -90,23 +95,25 @@
 					</button>
 				</div>
 			</form>
+			<div class="table-responsive">
+				<table
+					class="table tb1 table-striped table-hover table-bordered  text-center mt-4"
+				>
+					<thead>
+						<tr>
+							<th scope="col" class="w-50">Expense Field</th>
+							<th scope="col">Amount</th>
+							<th scope="col" class="w-25" id="payLabel">Last Payment Date</th>
+							<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- tr  -->
+					</tbody>
+				</table>
+			</div>
 			<table
-				class="table tb1 table-striped table-hover table-bordered text-center mt-4"
-			>
-				<thead>
-					<tr>
-						<th scope="col" class="w-50">Expense Field</th>
-						<th scope="col">Amount</th>
-						<th scope="col" class="w-25">Last Payment Date</th>
-						<th scope="col">Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					<!-- tr  -->
-				</tbody>
-			</table>
-			<table
-				class="table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto tb2"
+				class="table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto tb2" id="tbl2"
 			>
 				<tbody class="text-end">
 					<tr>
