@@ -23,8 +23,22 @@ window.addEventListener("load", () => {
 	const tarihInput = document.getElementById("tarihInput");
 	tarihInput.valueAsDate = new Date();
 	getData();
+	updateRemainingValues(); 
 	console.log(gideriniz.textContent)
 });
+
+
+const updateRemainingValues = () => {
+	totalGelir = gelir.reduce((sum, gelir) => sum + gelir, 0);
+	totalGider = gider.reduce((acc, g) => acc + g, 0);
+	geliriniz.textContent = totalGelir;
+	gideriniz.textContent = totalGider;
+	kalan.textContent = totalGelir - totalGider;
+	localStorage.setItem("gelir", JSON.stringify(gelir));
+	localStorage.setItem("gider", JSON.stringify(gider));
+  };
+
+
 
 const bubling = () => {
 	const main = document.querySelector("main");
@@ -53,9 +67,10 @@ const bubling = () => {
         <td><i class="fa-solid fa-trash-can" id="delBtn"></i></td>
       `;
 				gider.push(Number(harcamaMiktar.value));
-				totalGider = gider.reduce((acc, gider) => acc + gider, 0);
-				gideriniz.textContent = totalGider;
-				kalan.textContent = totalGelir - gideriniz.textContent;
+				updateRemainingValues()
+				// totalGider = gider.reduce((acc, gider) => acc + gider, 0);
+				// gideriniz.textContent = totalGider;
+				// kalan.textContent = totalGelir - gideriniz.textContent;
 				tb1.appendChild(tr);
 				harcama.value = "";
 				harcamaMiktar.value = "";
@@ -68,11 +83,12 @@ const bubling = () => {
 				swal();
 			} else {
 				gelir.push(Number(income.value));
-				totalGelir = gelir.reduce((sum, gelir) => sum + gelir, 0);
-				console.log(totalGelir);
-				geliriniz.textContent = totalGelir;
+				updateRemainingValues()
+				// totalGelir = gelir.reduce((sum, gelir) => sum + gelir, 0);
+				// console.log(totalGelir);
+				// geliriniz.textContent = totalGelir;
 				// gideriniz.textContent = totalGider;
-				kalan.textContent = geliriniz.textContent - gideriniz.textContent;
+				// kalan.textContent = geliriniz.textContent - gideriniz.textContent;
 				income.value = "";
 				localStorage.setItem("gelir",JSON.stringify(gelir))
 			}
@@ -84,14 +100,15 @@ const bubling = () => {
 			totalGider -= deletedAmount; // burada gider dizisinden eksilmte yapilmiyor
 			gider = gider.filter((item,index)=> index !== gider.indexOf(deletedAmount))
 			totalGider = gider.reduce((acc, gider) => acc + gider, 0); // dikkat 15
+			updateRemainingValues()
 			// gider.push(totalGider) // 5 5 5 15
 		    // gider = gider.filter((item)=> item == totalGider) // 15
 			// gider[0] = `${gider[0] - deletedAmount}`
 			// totalGider = gider
 			// console.log( gider) //10
 			//
-			gideriniz.textContent = totalGider;
-			kalan.textContent = geliriniz.textContent - gideriniz.textContent;
+			// gideriniz.textContent = totalGider;
+			// kalan.textContent = geliriniz.textContent - gideriniz.textContent;
 			localStorage.setItem("gelir",JSON.stringify(gelir))
 			localStorage.setItem("gider",JSON.stringify(gider))
 			tRow.remove();
@@ -99,9 +116,10 @@ const bubling = () => {
 		} else if (e.target.id === "clearAll") {
 			gelir = [];
 			gider = [];
-			geliriniz.textContent = gelir;
-			gideriniz.textContent = gider;
-			kalan.textContent = "";
+			updateRemainingValues()
+			// geliriniz.textContent = gelir;
+			// gideriniz.textContent = gider;
+			// kalan.textContent = "";
 			localStorage.setItem("tb1",tb1.innerHTML)
 			localStorage.setItem("gelir",JSON.stringify(gelir))
 			localStorage.setItem("gider",JSON.stringify(gider))
@@ -176,3 +194,7 @@ function getData() {
 income.addEventListener("keyup", () => {
 	income.value = income.value.replace(/e/gi, "");
 });
+
+
+
+  
