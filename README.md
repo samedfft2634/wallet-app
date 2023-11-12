@@ -38,8 +38,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-<img src="https://github.com/samedfft2634/wallet-app/assets/100915606/fd870b7b-d3c4-40ba-967f-892fc7bbfdb6" >
+<img src="https://github.com/samedfft2634/wallet-app/assets/100915606/a1c21220-0bde-44f1-850b-25e814420fb2" >
 <br>
 <br>
 This is the biggest project I have ever done. Why? It looks like basic Financial movements page but it is not. In the background the page has beautiful structure to store your expenditures. With this feature you can see and update your incomes and expenditures when you get back on website. Updating is just adding and removing , has not edit action yet. <br><br>
@@ -69,7 +68,7 @@ There are three buttons for actions. <br>
 ## Notes
 > [!NOTE]
 > Great practice to DOM manipulating. <br>
-> Big business in a short time. 🕓 <br>
+> Big business in a short time. 🕓⌛ <br>
 > The code is complex and poorly readable because it was prepared with Turkish concepts and presented in English<br>
 
 
@@ -85,5 +84,23 @@ There are three buttons for actions. <br>
 > Be carefull to clicking on "Clear Information". This button clears all really 😮😨
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Responsive Designs 📲💻
+<!-- Responsive Designs -->
+<div align="center" id="responsive">
+  <!-- First Row -->
+  <div align="center" style="display: flex; gap: 2rem; justify-content: center; margin-bottom: 5rem;">
+    <img src="https://github.com/samedfft2634/wallet-app/assets/100915606/860b5b9f-f407-4168-880e-0ce666cfd611" width="45%">
+    <img src="https://github.com/samedfft2634/wallet-app/assets/100915606/a3ddf7d9-6b14-4648-872c-8a1741afe5cf" width="45%">
+  </div>
+  
+  <!-- Second Row -->
+  <div align="center" style="display: flex; gap: 2rem; justify-content: center; margin-top: 5rem;">
+    <img src="https://github.com/samedfft2634/wallet-app/assets/100915606/666f8e08-b619-45fa-9f10-b090a0ecfbe5" width="35%">
+    <img src="https://github.com/samedfft2634/wallet-app/assets/100915606/96b84456-776e-42d8-bc30-3f35c6bee263" width="55%">
+  </div>
+</div>
+
+
 
 [Bootstrap-url]: https://getbootstrap.com
