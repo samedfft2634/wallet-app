@@ -14,7 +14,13 @@ const clearAll = document.getElementById("clearAll");
 const tb1 = document.querySelector(".tb1 tbody");
 const tb2 = document.querySelector(".tb2 tbody");
 
-
+const normalizeString = (str) => {
+	return str
+		.toLowerCase()
+		.replace(/[^a-zA-Z0-9 ]/g, "")
+		.replace(/\s+/g, " ") // to clean spaces
+		.trim();
+};
 
 let gelir = [];
 let totalGelir = [];
@@ -102,13 +108,15 @@ const bubling = () => {
 				});
 			} else {
 				e.preventDefault();
-				harcama.value = harcama.value.replace(/e/gi, "");
+				harcama.value = normalizeString(harcama.value);
+				// harcama.value = harcama.value.replace(/e/gi, "");
 				tr.innerHTML = `
-        <td>${harcama.value}</td>
-        <td class="amount">${harcamaMiktar.value}</td>
-        <td>${tarihInput.value}</td>
-        <td><i class="fa-solid fa-trash-can" id="delBtn"></i></td>
-      `;
+  <td>${normalizeString(harcama.value)}</td>
+  <td class="amount">${harcamaMiktar.value}</td>
+  <td>${tarihInput.value}</td>
+  <td><i class="fa-solid fa-trash-can" id="delBtn"></i></td>
+`;
+
 				gider.push(Number(harcamaMiktar.value));
 				updateRemainingValues();
 				tb1.appendChild(tr);
