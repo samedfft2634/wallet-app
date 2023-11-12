@@ -46,6 +46,7 @@ This is the biggest project I have ever done. Why? It looks like basic Financial
 * If there is a long expense name don't worry!
 * With the responsive design, you can easily navigate through the tables if the expense name is long or if you have a large amount of expenses
 
+<p align="right">(<a href="#responsive">Go Responsive Designs</a>)</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -101,6 +102,6 @@ There are three buttons for actions. <br>
   </div>
 </div>
 
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [Bootstrap-url]: https://getbootstrap.com
